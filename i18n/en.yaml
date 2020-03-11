@@ -102,6 +102,9 @@
 - id: more_talks
   translation: See all talks
 
+- id: more_events
+  translation: See all events
+
 - id: more_publications
   translation: See all publications
 
@@ -187,6 +190,9 @@
 
 - id: talks
   translation: Talks
+
+- id: events
+  translation: Events
 
 - id: projects
   translation: Projects
