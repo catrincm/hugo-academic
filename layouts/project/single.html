@@ -62,6 +62,23 @@
           {{ end }}
         {{ end }}
       {{ end }}
+
+
+      {{ $items := where (where site.RegularPages "Type" "event") ".Params.projects" "intersect" (slice $project) }}
+      {{ $count := len $items }}
+      {{ if ge $count 1 }}
+        <h2>{{ (i18n "events") }}</h2>
+        {{ range $items }}
+          {{ if eq site.Params.projects.event_view 1 }}
+            {{ partial "li_list" . }}
+          {{ else if eq site.Params.projects.event_view 3 }}
+            {{ partial "li_card" . }}
+          {{ else }}
+            {{ partial "li_compact" . }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
     </div>
   </div>
 </article>
